@@ -1,0 +1,16 @@
+[Unit]
+Description=Senaliza conexion Internet RPi
+After=multi-user.target
+
+[Service]
+Type=idle
+Restart=always
+
+WorkingDirectory=/home/pi/senal
+User=pi
+
+ExecStart=/usr/bin/python /home/pi/senal/senal.py &
+
+[Install]
+WantedBy=multi-user.target
+
